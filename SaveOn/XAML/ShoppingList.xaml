@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:FileUploader" 
+             xmlns:mr="clr-namespace:MR.Gestures;assembly=MR.Gestures" 
+             
+             x:Class="SaveOn.XAML.ShoppingList">
+    <StackLayout>
+    <ListView x:Name="listView"                                      
+              HasUnevenRows="True"
+              ItemsSource="{Binding couponList}">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+          <ViewCell>
+      
+            <mr:Image
+              Source="{Binding ImageStream}"
+              PanningCommand="{Binding PanningCommand}"
+              PannedCommand="{Binding PannedCommand}"
+              SwipedCommand="{Binding SwipedCommand}"
+              Swiped="Image_OnSwiped"
+              TranslationX="{Binding TranslationX}"
+              AnchorX="{Binding AnchorX}"
+				      AnchorY="{Binding AnchorY}"
+            />
+           
+          </ViewCell>		      
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView> 
+  </StackLayout>
+</ContentPage>
